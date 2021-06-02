@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Give Project ID</h1>
+<div mat-dialog-content>
+  <mat-dialog-content>
+    <input matInput [(ngModel)]="data.proid" #proid>
+  </mat-dialog-content>
+</div>
+<ul>
+  <li *ngFor="let item of items">
+     {{ item }} <button (click)="load(item)">Load</button>
+  </li>
+</ul>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.proid" (click)="loadid(data.proid)" cdkFocusInitial>Open</button>
+  <!--button (click)="loadid(data.proid)">Open</button-->
+</div>

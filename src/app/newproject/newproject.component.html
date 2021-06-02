@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Create {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Enter Project Folder name</p>
+  <mat-dialog-content>
+    <input matInput [(ngModel)]="data.file" #projectname>
+  </mat-dialog-content>
+</div>
+<input type="text" placeholder="Enter username:" #username>
+<div>
+    <ul>
+        <li *ngFor="let item of items; let i = index">
+           {{ item }} <button (click)="remove(i)">Remove</button>
+        </li>
+    </ul>
+    <div>
+        <input type="text" [(ngModel)]="input" placeholder="Enter member name:">
+        <input type="text" [(ngModel)]="email" placeholder="Enter member email_Id:">
+        <button type="button" (click)="add()">Add</button>
+    </div>
+    </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.file" cdkFocusInitial (click)="save(projectname.value, username.value)">Save</button>
+</div>

@@ -1,0 +1,195 @@
+/*#chat{
+  width:280px;
+  height: 60%;
+}*/
+.open-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 1500px;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 280px;
+    height: 60px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    overflow-y: auto;
+    right: 15px;
+    margin-top: 200px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+
+  .filename{
+    display:none;
+    width: 300px;
+    background-color: #111111;
+    color: white;
+    height: 50px;
+  }
+  /* Add styles to the form container */
+  .form-container {
+    margin-top: 0px;
+    width: 300px;
+    height: 350px;
+    opacity: 100%;
+    bottom: 0px;
+    background-color: white;
+  }
+  
+
+  /* Full-width textarea */
+  .form-container .textarea1 {
+    width: 100%;
+        border: none;
+position: relative;
+    background: f1f1f1;
+    height: 20%;
+    margin-bottom: 55px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  /*textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }*/
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+  
+
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+    color: white;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    opacity: 0.8;
+  }
+  
+  /* Add some hover effects to buttons */
+ /* .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }*/
+
+  .sidenav {
+    position: absolute;
+    height: 95%;
+    width: 220px;
+    top: 60px;
+    left: 0;
+    background-color: #111111;
+    overflow: auto;
+}
+  span {
+        padding: 0px 0px 0px 0px;
+        text-decoration: none;
+        font-size: 25px;
+        font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+        color: #818181;
+        display: block;
+    }
+    .selected {
+        color: #e1e1e1;
+    }
+    /*:hover {
+        color: #f1f1f1;
+        cursor: pointer;
+    }*/
+    textarea {
+      position: absolute;
+      width: calc(100% - 220px);
+      height: 62%;
+      right: 0;
+      top: 60px;
+      font-size: 18pt;
+      resize: none;
+      border: none;
+      color: #111111;
+      overflow: auto;
+  }
+  #output{
+    position: absolute;
+    left: 647px;
+    font-size: 200%;
+    width:696px;
+    top:400px;
+    height: 60%;
+    overflow: auto;
+    background-color: antiquewhite;
+  }
+
+  #input{
+    position: absolute;
+    top: 400px;
+    left:220px;
+    font-size: 200%;
+    width:32%;
+    height: 60%;
+    overflow: auto;
+    background-color: #e1e1e1;
+    color: #111111;
+  }
+  /*codemirror*/
+  ngx-codemirror{
+    font-size: 20px;
+    position: absolute;
+      width: calc(100% - 220px);
+      height: 450px;
+      right: 0;
+      top: 60px;
+      font-size: 18pt;
+      resize: none;
+      border: none;
+      overflow: auto;
+  }
+
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

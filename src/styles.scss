@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+$enable-shadows: true;
+$enable-gradients: true;
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/material.css";
+@import "~codemirror/theme/3024-night.css";
+@import "~codemirror/theme/3024-day.css";
+@import "~codemirror/theme/abcdef.css";
+@import "~codemirror/theme/eclipse.css";
+@import "~codemirror/theme/cobalt.css";
+@import "~codemirror/theme/ambiance.css";
+@import "~codemirror/theme/ambiance-mobile.css";
+@import "~codemirror/theme/base16-dark.css";
+@import "~codemirror/theme/base16-light.css";
+//
+@import "~codemirror/addon/display/fullscreen.css";
+@import "~codemirror/addon/scroll/simplescrollbars.css";
+// @import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~codemirror/addon/hint/show-hint.css";
+@import "~codemirror/addon/fold/foldgutter.css";
+// @import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+// @import "~bootstrap/scss/input-group";
+// @import "~bootstrap/scss/custom-forms";
+// @import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+@import "~codemirror/lib/codemirror.css";
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  color: #4a4a4a;
+ font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5
+}
+h1 {
+  font-weight: 400;
+}
+.ngx-codemirror {
+  border: 1px solid #ccc;
+    //font-size: 50px;
+  
+}
+

@@ -1,0 +1,10 @@
+.position{
+	background-repeat: no-repeat;
+	background-position: center ;
+	background-size: cover;
+	min-height: 70vh;
+	border-radius: 0px;
+}
+.first{
+	font-size: 3em;
+}

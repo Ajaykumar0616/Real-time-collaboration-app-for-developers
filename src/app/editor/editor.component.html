@@ -1,0 +1,162 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+
+<meta charset="windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--style>
+    body {
+    background-color: #A9A9A9;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  h1{text-align: center;size:20px;text-decoration:none;color: white;font-family: Arial, Helvetica, sans-serif;}
+  h3{text-align: center;size:20px;text-decoration:none;color: white;font-family: Arial, Helvetica, sans-serif;}
+  input[type=submit], select {
+   
+   background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 16px;
+    margin:6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+   textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: black;
+    font-size: 16px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  </style-->
+
+
+
+
+  
+  <nav class = "navbar navbar-expand-lg bg-dark">
+      <!--a href="#" class="navbar-brand"><img src="assets/img/ajay.ico"> IPPM</a-->
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu" (hide)="checkVal($event)">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="menu">
+    <ul class = "navbar-nav custom-nav">
+        <li class="nav-item"><button mat-raised-button (click) = "createproject(pro.value)" #pro value="Project">Create Project</button></li>
+        <li class="nav-item" style="margin-left:5px;"><button class="btn btn-primary" style="width:100px; height:30px;" (click)="choose()" data-toggle="tooltip" title="Enter projectID to collaborate. A projectID is given in mail.">Open with ProjectID</button></li>
+      <!--li class="nav-item"><select class="form-control mr-1 mb-1 btn btn-primary" style="width:100px; height:30px;" name="state" [(ngModel)]="mode" (ngModelChange)="changeMode()">
+          <option value="markdown">Markdown</option>
+          <option value="text/typescript">TypeScript</option>
+          <option value="python">Python</option>
+          <option value="vbscript">VB</option>
+          <option value="clike">C,C++,C#</option>
+          <option value="clike">java</option>
+        </select></li-->
+        <li class="nav-item" style="margin-left:5px;"><select class="form-control mr-1 mb-1 btn btn-primary" data-toggle="tooltip" title="Select Theme" style="width:100px; height:30px;" name="theme" [(ngModel)]="theme" (ngModelChange)="changeTheme()">
+            <option value="3024-day">Theme(Default:3024-day)</option>
+            <option value="3024-night">3024-night</option>
+            <option value="ambiance">ambiance</option>
+            <option value="abcdef">abcdef</option>
+            <option value="base16-dark">base16-dark</option>
+            <option value="ambiance-mobile">ambiance-mobile</option>
+            <option value="base16-light">base16-light</option>
+            <option value="eclipse">eclipse</option>
+            <option value="cobalt">cobalt</option>
+          </select></li>
+          <li class="nav-item" style="margin-left:5px;"><label class="btn btn-primary" style="width:100px; height:30px;" [class.active]="readOnly">
+              <input type="checkbox" [(ngModel)]="readOnly" name="readOnly" autocomplete="off">
+              Toggle read-only mode (currently {{ readOnly ? 'on' : 'off' }})
+            </label></li>
+            <li class="nav-item" style="margin-left:5px;"> <button class="btn btn-primary" style="width:100px; height:30px;" (click)="clear()">Clear</button>
+            </li>
+      <li class="nav-item" style="margin-left:5px;"><select class="btn btn-primary"  style="width:100px; height:30px;" data-toggle="tooltip" title="Select Language" (change)="setlang($event)"><option value="C">C</option><option value="C++">C++</option>
+        <option value="Java">Java</option><option value="Python">Python</option></select></li>
+      <li class="nav-item" style="margin-left:5px;"><p style="color: white; font-size: 10dp; font-size: 0.875em;" >Compile With Input :
+        <input type="radio" name="inputRadio" #inputRadio id="inputRadio" value="true"/>Yes
+        <input type="radio" name="inputRadio" #inputRadio id="inputRadio" value="false"/>No</p></li>
+      <li class="nav-item" style="margin-left:5px;"><button type="button" class="btn btn-success" style="width:100px; height:30px;" data-toggle="tooltip" title="Compile/Execute" (click) = "compile(code.value, input.value, inputRadio.value)">RUN</button>
+      </li>
+      <li class="nav-item" style="margin-left:5px;"><button class="btn btn-primary" style="width:100px; height:30px;" value="logout" (click)="execute()">Logout</button></li>
+      <p id="setusername" style="color: white; font-size: 160%; margin-left: 150px;">HELLO</p>
+    </ul>
+  </div>
+  </nav>
+  <div class="filename" id="file">
+    <input id = "name" class="filename" #proname type = "text" name = "name" value = "" 
+         placeholder = "Enter Project name">
+         <button type = "button" class="filename" name = "button" (click) = "projectname(proname.value)">
+            Set Chat name!
+         </button>
+  </div>
+  <div class='sidenav'>
+    <span (click)='newDoc()' id="spannew" aria-placeholder="Folder name" style="color: blue;">New Document</span>
+    <span [class.selected]='docId === currentDoc' (click)='loadDoc(docId)' *ngFor='let docId of documents | async'>{{ docId }}</span>
+  </div>
+  <mat-tab *ngFor="let tab of tabs" [label]="tab"></mat-tab>
+  <!--textarea [(ngModel)]='document.doc' (keyup)='editDoc()' name="code" #code placeholder='Start typing...'></textarea-->
+  <ngx-codemirror id="code"
+  [(ngModel)]='document.doc'
+  (keyup)='editDoc()'
+  name="code" 
+  #code
+  style="border-style: solid;"
+  [ngModelOptions]="{standalone: true}"
+  [options]="options"
+  [ngModel]="defaults[mode]"
+  [disabled]="readOnly"
+  [autoFocus]="true"
+  (ngModelChange)="handleChange($event)"
+></ngx-codemirror>
+  <textarea id="input" name="input" #input style="border-style: solid;">Input
+  </textarea>
+  <textarea id="output" name="output" #output style="border-style: solid;">Output
+  </textarea>
+
+  <button class="open-button" (click)="openForm()" style="font-size: 160%;">Communicate with Team Members</button>
+  <div class="chat-popup" id="myForm">
+      <div><form class="form-container" action="" name = "chatit">
+        <h1>Chat</h1>
+        <div id = "error-container"></div>
+        <input id = "name" #name type = "text" name = "name" value = "" 
+         placeholder = "Enter your name!">
+         <button type = "button" name = "button" (click) = "setUsername(name.value)">
+            Set Chat name!
+         </button>
+         <h2>My id - {{mypeerid}}</h2>
+         <input id = "vname" #vname type = "text" name = "name" value = "" 
+         placeholder = "Enter your name!" [(ngModel)]="anotherid">
+         <button type = "button"  (click) = "connect()">
+            connect
+         </button>
+         <button type = "button" (click) = "startvideo()">
+          Start VideoChat
+       </button>
+         <video #video></video>
+        <!--label for="msg"><b>Message</b></label-->
+        <textarea class="textarea1" placeholder="Type message.." id="m" #m required></textarea>
+        <div id = "message-container"></div>
+        <div><button type="button" class="btn" (click)="sendmsg(m.value, name.value)">Send</button></div>
+        <div><button type="button" class="cancel" (click)="closeForm()">Close</button></div>
+      </form></div>
+    </div>
+    

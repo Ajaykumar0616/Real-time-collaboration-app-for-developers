@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Create File</h1>
+<div mat-dialog-content>
+  <p>Enter Project File name</p>
+  <mat-dialog-content>
+    <input matInput [(ngModel)]="data.filename">
+  </mat-dialog-content>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.filename" cdkFocusInitial>Save</button>
+</div>
